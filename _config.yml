@@ -1,0 +1,18 @@
+title: Jihyun Jenny Hwang
+email: jh22w@fsu.edu
+description: PhD Candidate in [Your Department] at Florida State University.
+url: ""
+baseurl: ""
+
+name: Jihyun Jenny Hwang
+position: PhD Candidate
+department: "[Your Department]"
+university: Florida State University
+university_short: FSU
+location: Tallahassee, FL
+
+plugins:
+  - jekyll-seo-tag
+
+markdown: kramdown
+permalink: /:title/

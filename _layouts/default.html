@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} · {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-name" href="{{ '/' | relative_url }}">{{ site.name }}</a>
+      <nav class="site-nav">
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+        <a href="{{ '/research/' | relative_url }}" {% if page.url contains 'research' %}class="active"{% endif %}>Research</a>
+        <a href="{{ '/publications/' | relative_url }}" {% if page.url contains 'publications' %}class="active"{% endif %}>Publications</a>
+        <a href="{{ '/cv/' | relative_url }}" {% if page.url contains 'cv' %}class="active"{% endif %}>CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>{{ site.name }} · {{ site.university }} · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
